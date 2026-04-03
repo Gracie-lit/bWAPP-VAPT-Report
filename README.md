@@ -1,13 +1,12 @@
-# BWAPP VAPT Report
+# BWAPP Vulnerability Assessment & Penetration Testing (VAPT) Report 🛡️
 
-## Overview
+
 This project presents a Vulnerability Assessment and Penetration Testing (VAPT) conducted on the bWAPP (Buggy Web Application) in a controlled lab environment.
-
-The objective was to identify and exploit common web application vulnerabilities and understand their impact.
+The purpose of this assessment is to identify, exploit, and document security vulnerabilities across all DVWA modules and difficulty levels, and provide actionable remediation steps.
 
 ---
 
-## Environment
+## ⚙️Environment Setup
 - Target: bWAPP v2.2
 - OS: Kali Linux
 - Tools: Burp Suite, Docker
@@ -15,46 +14,38 @@ The objective was to identify and exploit common web application vulnerabilities
 
 ---
 
-## Vulnerabilities Identified
+## 🛠️ Vulnerabilities Covered
 
-### SQL Injection (Critical)
-- Bypassed authentication using `' OR 1=1#`
-- Retrieved all database records
-- Logged in without valid credentials
+| # | Vulnerability | CWE ID | CVSS | Risk Level |
+|---|--------------|--------|------|-----------|
+| 1 | SQL Injection | CWE-89 | 9.8 | Critical |
+| 2 | Cross-Site Scripting (XSS) | CWE-79 | 7.4 | High |
+| 3 | OS Command Injection | CWE-77 | 9.8 | Critical |
+| 4 | Cross-Site Request Forgery (CSRF) | CWE-352 | 6.5 | Medium |
+| 5 | Broken Authentication | CWE-287 | 8.0 | High |
+| 6 | HTML Injection | CWE-79 | 6.1 | Medium |
 
-### Cross-Site Scripting (XSS)
-- Reflected XSS
-- Stored XSS
-- Executed malicious scripts in browser
+---
+## Methodology
 
-### OS Command Injection (Critical)
-- Executed system commands (`ls`, `whoami`)
-- Retrieved server file structure
+1. **Reconnaissance**  
+   Explored application features and identified input points.
 
-### CSRF
-- Changed user password without verification
-- Performed unauthorized actions
+2. **Exploitation**  
+   Used Burp Suite and manual payloads to exploit vulnerabilities.
 
-### Broken Authentication
-- Extracted credentials from page source
-- Logged in using exposed credentials
+3. **Documentation**  
+   - Detailed proof of concept
+   - Mitigation recommendations 
+   - Screenshots of each step
+---
+## Evidence
+Detailed screenshots and proof of exploitation are included in the full report PDF.
 
-### HTML Injection
-- Injected HTML into application interface
+---
+## 📄 Documentation
+📥 [Download Full Technical Report(PDF)](./Gracious_Akalonu_Pentest_Report.pdf)
 
 ---
 
-## Key Learnings
-- Practical exploitation of OWASP Top 10 vulnerabilities
-- Hands-on use of Burp Suite for request interception
-- Understanding of real-world attack techniques
-
----
-
-## Screenshots
-See `/screenshots` folder for proof of exploitation.
-
----
-
-## Full Report
-(Upload your PDF here)
+Submitted by: Gracious Chioma Akalonu.
